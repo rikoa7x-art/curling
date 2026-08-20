@@ -17,7 +17,7 @@
   <!-- Leaflet CSS for Interactive Map -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
-  <!-- Custom Vintage Design System Styles (Mobile Optimized) -->
+  <!-- Custom Vintage Design System Styles -->
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
@@ -82,6 +82,39 @@
             <div class="strip-item"><i class="fa-solid fa-map-location-dot"></i> Wanayasa</div>
             <div class="strip-item"><i class="fa-brands fa-whatsapp"></i> 0877 0069 2352</div>
             <div class="strip-item"><i class="fa-solid fa-pump-soap"></i> Alat Steril</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND AMBASSADOR & OWNER UTAMA SECTION -->
+    <section class="ambassador-section" id="ownerSection">
+      <div class="container">
+        <div class="ambassador-card">
+          <div class="ambassador-img-wrapper">
+            <img src="src/images/bangleo_owner.jpg" alt="Bang Leo - Owner Utama & Brand Ambassador Leo-Curling">
+            <span class="ambassador-badge-ribbon">FOUNDER & OWNER</span>
+          </div>
+
+          <div class="ambassador-info">
+            <span style="color: var(--accent-gold); font-family: var(--font-vintage); font-size: 0.8rem; letter-spacing: 2px;">
+              <i class="fa-solid fa-crown"></i> BRAND AMBASSADOR & ROLE MODEL RAMBUT
+            </span>
+            <h2 class="ambassador-name">Bang Leo</h2>
+            <div class="ambassador-title">Owner Utama & Master Barber Leo-Curling</div>
+
+            <p class="ambassador-quote">
+              "Gaya rambut yang tepat membawa rasa percaya diri, wibawa, dan keberkahan. Kami hadir memberikan layanan cukur rambut keliling terbaik langsung ke lokasi tempat Anda di Kecamatan Wanayasa dan sekitarnya dengan tarif ramah terjangkau."
+            </p>
+
+            <div style="display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; justify-content: center;">
+              <span class="badge" style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--border-gold); color: var(--accent-gold); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-family: var(--font-vintage);">
+                <i class="fa-solid fa-star"></i> Master Barber 5.0 Rating
+              </span>
+              <span class="badge" style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--border-gold); color: var(--accent-gold); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-family: var(--font-vintage);">
+                <i class="fa-solid fa-user-check"></i> Role Model Gaya Rambut
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -293,13 +326,17 @@
 
   <!-- STICKY MOBILE BOTTOM NAVBAR -->
   <nav class="mobile-bottom-nav">
-    <a href="#catalogSection" class="mobile-nav-item active">
+    <a href="#ownerSection" class="mobile-nav-item active">
+      <i class="fa-solid fa-crown"></i>
+      <span>Owner</span>
+    </a>
+    <a href="#catalogSection" class="mobile-nav-item">
       <i class="fa-solid fa-scissors"></i>
       <span>Katalog</span>
     </a>
     <a href="#bookingSection" class="mobile-nav-item">
       <i class="fa-solid fa-map-location-dot"></i>
-      <span>Lokasi & Order</span>
+      <span>Order</span>
     </a>
     <a href="https://wa.me/6287700692352" target="_blank" class="mobile-nav-item">
       <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>

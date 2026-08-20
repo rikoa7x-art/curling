@@ -1,5 +1,6 @@
 /* ==========================================================================
    LEO-CURLING (CUKUR KELILING) - CATALOG DATA SUNDA BUHUN
+   Featured: Bang Leo (Founder, Owner Utama & Brand Ambassador)
    ========================================================================== */
 
 const MALE_STYLES = [
@@ -9,8 +10,8 @@ const MALE_STYLES = [
     gender: 'pria',
     price: 25000,
     duration: '35 Min',
-    image: 'src/images/male_fade.jpg',
-    description: 'Gradasi halus bagian samping & leher dengan puncak mahkota rambut rapi dan gagah ala Ksatria Pajajaran.'
+    image: 'src/images/bangleo_owner.jpg', // Bang Leo as Role Model & Brand Ambassador!
+    description: 'Model gaya rambut khas Bang Leo (Owner & Brand Ambassador). Gradasi halus bagian samping & leher dengan puncak mahkota rambut rapi & gagah ala Ksatria Pajajaran.'
   },
   {
     id: 'm2',
@@ -18,7 +19,7 @@ const MALE_STYLES = [
     gender: 'pria',
     price: 35000,
     duration: '35 Min',
-    image: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80',
+    image: 'src/images/bangleo_owner.jpg',
     description: 'Potongan belah samping klimis bermartabat tinggi, mencerminkan wibawa kepemimpinan raja Sunda buhun.'
   },
   {
@@ -123,7 +124,7 @@ const ADDITIONAL_SERVICES = [
 ];
 
 const BARBERS = [
-  { id: 'b1', name: 'Bang Leo (Founder & Barber Utama Leo-Curling)', rating: '5.0 ⭐' },
+  { id: 'b1', name: 'Bang Leo (Owner Utama, Ambassador & Master Barber)', rating: '5.0 ⭐' },
   { id: 'b2', name: 'Tim Capster Keliling Wanayasa', rating: '4.9 ⭐' }
 ];
 
@@ -137,7 +138,7 @@ const MOCK_INITIAL_ORDERS = [
     lng: 107.5628,
     notes: 'Rumah cat hijau dekat masjid, samping warung.',
     hairStyle: 'Gaya Ksatria Ciung Wanara (Low Taper Fade)',
-    barber: 'Bang Leo (Founder & Barber Utama Leo-Curling)',
+    barber: 'Bang Leo (Owner Utama, Ambassador & Master Barber)',
     date: '2026-08-21',
     time: '09:00',
     totalPrice: 25000,
@@ -153,7 +154,7 @@ const MOCK_INITIAL_ORDERS = [
     lng: 107.5655,
     notes: 'Dekat lapangan bola Wanayasa.',
     hairStyle: 'Gaya Nyi Pohaci (Modern Butterfly Cut)',
-    barber: 'Bang Leo (Founder & Barber Utama Leo-Curling)',
+    barber: 'Bang Leo (Owner Utama, Ambassador & Master Barber)',
     date: '2026-08-21',
     time: '13:00',
     totalPrice: 40000,
