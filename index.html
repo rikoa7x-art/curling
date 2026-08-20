@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Leo-Curling - Jasa Cukur Keliling On-Demand (Wanayasa & Sekitarnya)</title>
+  <meta name="description" content="Leo-Curling (Cukur Keliling) - Jasa cukur rambut panggilan ke rumah area Kecamatan Wanayasa & sekitarnya. Tarif hemat Rp 20.000 - Rp 40.000 dengan gaya rambut pria & wanita modern.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Rye&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Leaflet CSS for Interactive Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Custom Vintage Design System Styles (Mobile Optimized) -->
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header-barber">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-logo">
+          <div class="barber-pole-icon" title="Classic Barber Pole"></div>
+          <div class="brand-text-container">
+            <span class="brand-title">Leo-Curling</span>
+            <span class="brand-subtitle">Cukur Keliling (Wanayasa)</span>
+          </div>
+        </a>
+
+        <!-- Navigation Mode Switcher -->
+        <div class="nav-actions">
+          <div class="mode-toggle-group" role="group" aria-label="Mode Aplikasi">
+            <button id="btnModeCustomer" class="mode-btn active">
+              <i class="fa-solid fa-user"></i> Pelanggan
+            </button>
+            <button id="btnModeAdmin" class="mode-btn">
+              <i class="fa-solid fa-scissors"></i> Admin Bang Leo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CUSTOMER VIEW WRAPPER -->
+  <main id="customerView" class="customer-view">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <i class="fa-solid fa-scissors"></i> LEO-CURLING • TARIF RP 20.000 - RP 40.000
+          </span>
+          <h1 class="hero-title">Jasa Cukur Keliling <span>Leo-Curling</span> Datang Ke Rumah Anda</h1>
+          <p class="hero-description">
+            Layanan cukur rambut panggilan ramah & berkualitas. Cukup pilih model gaya rambut kesukaan Anda, bagikan titik lokasi tempat Anda, dan Bang Leo siap mendatangi lokasi Anda di seluruh wilayah <strong>Kecamatan Wanayasa & Sekitarnya</strong>.
+          </p>
+          
+          <div style="background: rgba(74, 31, 24, 0.9); border: 1px dashed var(--border-gold); padding: 10px 16px; border-radius: 6px; display: inline-block; margin-bottom: 20px;">
+            <i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> 
+            <span style="color: #fff; font-family: var(--font-vintage); font-size: 0.85rem;">
+              Khusus <strong>Kecamatan Wanayasa & Sekitarnya</strong>
+            </span>
+          </div>
+
+          <br>
+          <a href="#bookingSection" class="btn-vintage">
+            <i class="fa-solid fa-calendar-check"></i> Pesan Cukur Keliling
+          </a>
+
+          <div class="hero-features-strip">
+            <div class="strip-item"><i class="fa-solid fa-tags"></i> Rp 20rb - Rp 40rb</div>
+            <div class="strip-item"><i class="fa-solid fa-map-location-dot"></i> Wanayasa</div>
+            <div class="strip-item"><i class="fa-brands fa-whatsapp"></i> 0877 0069 2352</div>
+            <div class="strip-item"><i class="fa-solid fa-pump-soap"></i> Alat Steril</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HAIRSTYLE SHOWCASE SECTION -->
+    <section class="section-padding" id="catalogSection">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="vintage-heading">Katalog Gaya Rambut</h2>
+          <p class="section-subtitle">Model Rambut Modern Sunda Buhun (Rp 20.000 - Rp 40.000)</p>
+        </div>
+
+        <!-- Gender Filter Tabs -->
+        <div class="catalog-tabs">
+          <button id="tabPria" class="tab-btn active" onclick="switchGenderTab('pria')">
+            <i class="fa-solid fa-mars"></i> Pria Modern
+          </button>
+          <button id="tabWanita" class="tab-btn" onclick="switchGenderTab('wanita')">
+            <i class="fa-solid fa-venus"></i> Wanita Modern
+          </button>
+        </div>
+
+        <!-- Hairstyle Grid Cards -->
+        <div id="hairstyleGrid" class="hairstyle-grid">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING & LOCATION SECTION -->
+    <section class="section-padding booking-section" id="bookingSection">
+      <div class="container">
+        <div class="booking-card">
+          <div class="booking-card-header" style="text-align: center; margin-bottom: 20px;">
+            <h2 class="booking-card-title">Formulir Order Leo-Curling</h2>
+            <p class="booking-card-subtitle">Bang Leo Mendatangi Alamat & Lokasi Tempat Anda (Kecamatan Wanayasa & Sekitarnya)</p>
+          </div>
+
+          <!-- Service Area Notice Banner -->
+          <div style="background: rgba(197, 160, 89, 0.15); border-left: 4px solid var(--accent-mahogany); padding: 10px 14px; margin-bottom: 20px; border-radius: 4px; font-size: 0.85rem;">
+            <i class="fa-solid fa-circle-info" style="color: var(--accent-mahogany);"></i> 
+            <strong style="color: var(--accent-mahogany);">Informasi:</strong> Wilayah pelayanan saat ini mencakup <strong>Kecamatan Wanayasa & Sekitarnya</strong>. Admin: <strong>Bang Leo (0877 0069 2352)</strong>.
+          </div>
+
+          <form id="bookingForm">
+            <div class="form-grid">
+
+              <!-- Personal Data & Hair Style -->
+              <div class="form-column">
+                <div class="form-group">
+                  <label class="form-label" for="inputName">
+                    <i class="fa-solid fa-user"></i> Nama Lengkap Pelanggan *
+                  </label>
+                  <input type="text" id="inputName" class="form-control" placeholder="Contoh: Kang Asep / Teh Nining" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="inputPhone">
+                    <i class="fa-brands fa-whatsapp"></i> Nomor WhatsApp Aktif *
+                  </label>
+                  <input type="tel" id="inputPhone" class="form-control" placeholder="Contoh: 081234567890" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="inputStyleName">
+                    <i class="fa-solid fa-scissors"></i> Gaya Rambut Dipilih
+                  </label>
+                  <input type="text" id="inputStyleName" class="form-control" value="Gaya Ksatria Ciung Wanara (Low Taper Fade)" readonly style="background: #e9e2d5; font-weight: bold;">
+                  <input type="hidden" id="inputStylePrice" value="25000">
+                  <small style="color: var(--accent-leather);">*Tarif terjangkau Rp 20.000 - Rp 40.000</small>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="selectBarber">
+                    <i class="fa-solid fa-user-tie"></i> Pilihan Barber / Capster
+                  </label>
+                  <select id="selectBarber" class="form-control">
+                    <!-- Populated dynamically -->
+                  </select>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 0;">
+                  <div class="form-group">
+                    <label class="form-label" for="inputDate"><i class="fa-regular fa-calendar"></i> Tanggal</label>
+                    <input type="date" id="inputDate" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="inputTime"><i class="fa-regular fa-clock"></i> Jam</label>
+                    <input type="time" id="inputTime" class="form-control" value="10:00" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Address & GPS Interactive Pin Map -->
+              <div class="form-column">
+                <div class="form-group">
+                  <label class="form-label" for="inputAddress">
+                    <i class="fa-solid fa-house-chimney"></i> Alamat Rumah / Tempat (Area Wanayasa) *
+                  </label>
+                  <textarea id="inputAddress" class="form-control" placeholder="Nama Kampung / Desa, Jalan, No. Rumah, Patokan..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">
+                    <i class="fa-solid fa-map-pin"></i> Tentukan Titik Lokasi Presisi (Pin Map) *
+                  </label>
+
+                  <!-- Map Container -->
+                  <div class="map-container-wrapper">
+                    <div id="map"></div>
+                    <div class="map-tools-bar">
+                      <div id="coordsText" class="location-coords-info">
+                        <i class="fa-solid fa-location-dot"></i> Geser pin atau klik peta titik tempat Anda
+                      </div>
+                      <button type="button" id="btnUseGps" class="btn-gps">
+                        <i class="fa-solid fa-crosshairs"></i> Gunakan Lokasi Saya (GPS)
+                      </button>
+                    </div>
+                  </div>
+                  <input type="hidden" id="inputLat">
+                  <input type="hidden" id="inputLng">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="inputNotes">
+                    <i class="fa-regular fa-note-sticky"></i> Catatan Patokan Lokasi (Opsional)
+                  </label>
+                  <input type="text" id="inputNotes" class="form-control" placeholder="Contoh: Depan warung / dekat masjid desa">
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Submit Action -->
+            <div style="text-align: center; margin-top: 25px;">
+              <button type="submit" class="btn-vintage" style="font-size: 1.05rem; width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i> Kirim Order Ke Bang Leo
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BARBER TEAM ADMIN VIEW WRAPPER -->
+  <main id="adminView" class="admin-view section-padding">
+    <div class="container">
+      
+      <div class="admin-header-card">
+        <div>
+          <h2 class="vintage-heading" style="font-size: 1.5rem; margin-bottom: 4px;">Dashboard Bang Leo (Admin)</h2>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Kelola Pesanan Masuk Cukur Keliling Wanayasa & Navigasi Lokasi Pelanggan</p>
+        </div>
+
+        <div class="admin-stats">
+          <div class="stat-box">
+            <div id="statTotalOrders" class="stat-number">0</div>
+            <div class="stat-label">Total Pesanan</div>
+          </div>
+          <div class="stat-box">
+            <div id="statPending" class="stat-number" style="color: #fbbf24;">0</div>
+            <div class="stat-label">Pending</div>
+          </div>
+          <div class="stat-box">
+            <div id="statEnroute" class="stat-number" style="color: #60a5fa;">0</div>
+            <div class="stat-label">Perjalanan</div>
+          </div>
+          <div class="stat-box">
+            <div id="statCompleted" class="stat-number" style="color: #4ade80;">0</div>
+            <div class="stat-label">Selesai</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Map Overview -->
+      <div class="admin-map-card">
+        <h3 style="color: var(--accent-gold); font-family: var(--font-vintage); margin-bottom: 12px; font-size: 1.1rem;">
+          <i class="fa-solid fa-map-marked-alt"></i> Peta Titik Pelanggan Wanayasa
+        </h3>
+        <div id="adminMap"></div>
+      </div>
+
+      <!-- Admin Orders Table -->
+      <div class="orders-table-wrapper">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>ID & Waktu</th>
+              <th>Pelanggan</th>
+              <th>Alamat & Navigasi Maps</th>
+              <th>Gaya & Barber</th>
+              <th>Jadwal</th>
+              <th>Status</th>
+              <th>Ubah Status</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody">
+            <!-- Populated dynamically via adminModule.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- STICKY MOBILE BOTTOM NAVBAR -->
+  <nav class="mobile-bottom-nav">
+    <a href="#catalogSection" class="mobile-nav-item active">
+      <i class="fa-solid fa-scissors"></i>
+      <span>Katalog</span>
+    </a>
+    <a href="#bookingSection" class="mobile-nav-item">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <span>Lokasi & Order</span>
+    </a>
+    <a href="https://wa.me/6287700692352" target="_blank" class="mobile-nav-item">
+      <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+      <span>WhatsApp</span>
+    </a>
+    <a href="#" class="mobile-nav-item" onclick="switchViewMode('admin'); return false;">
+      <i class="fa-solid fa-user-gear"></i>
+      <span>Admin</span>
+    </a>
+  </nav>
+
+  <!-- VINTAGE RECEIPT MODAL -->
+  <div id="receiptModal" class="modal-overlay">
+    <div class="receipt-card">
+      <div class="receipt-header">
+        <div class="receipt-stamp-wax" title="Leo-Curling Approved">APPROVED</div>
+        <h2 class="receipt-title">STRUK LEO-CURLING</h2>
+        <div class="receipt-order-id">ORDER ID: #LC-000</div>
+      </div>
+
+      <div class="receipt-body">
+        <div class="receipt-row">
+          <span>Nama Pelanggan:</span>
+          <strong id="receiptCustomer">-</strong>
+        </div>
+        <div class="receipt-row">
+          <span>No. WhatsApp:</span>
+          <span id="receiptPhone">-</span>
+        </div>
+        <div class="receipt-row">
+          <span>Gaya Rambut:</span>
+          <strong id="receiptStyle" style="color: var(--accent-mahogany); text-align: right; max-width: 200px;">-</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Barber:</span>
+          <span id="receiptBarber">-</span>
+        </div>
+        <div class="receipt-row">
+          <span>Jadwal Datang:</span>
+          <span id="receiptTime">-</span>
+        </div>
+        <div class="receipt-row">
+          <span>Alamat Tempat:</span>
+          <span id="receiptAddress" style="text-align: right; max-width: 220px; font-size: 0.85rem;">-</span>
+        </div>
+        <div class="receipt-row total">
+          <span>Total Tarif:</span>
+          <span id="receiptTotal">Rp 0</span>
+        </div>
+      </div>
+
+      <div class="receipt-actions">
+        <a id="btnWaSend" href="https://wa.me/6287700692352" target="_blank" class="btn-vintage" style="text-decoration: none;">
+          <i class="fa-brands fa-whatsapp"></i> Kirim Ke Bang Leo
+        </a>
+        <button type="button" class="btn-vintage-outline" onclick="closeReceiptModal()">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer-barber">
+    <div class="container">
+      <div class="footer-content">
+        <div class="brand-title" style="font-size: 1.4rem;">Leo-Curling (Cukur Keliling)</div>
+        <p style="max-width: 650px; font-size: 0.85rem;">
+          Jasa Cukur Rambut Keliling Ke Rumah. Khusus Wilayah <strong>Kecamatan Wanayasa & Sekitarnya</strong> (Tarif Rp 20.000 - Rp 40.000).
+        </p>
+        <div style="font-size: 0.9rem; color: var(--accent-gold); margin-top: 5px;">
+          <i class="fa-brands fa-whatsapp"></i> Contact Admin: <strong>Bang Leo (0877 0069 2352)</strong>
+        </div>
+      </div>
+      <div style="border-top: 1px dashed rgba(197, 160, 89, 0.2); padding-top: 15px; font-size: 0.75rem;">
+        &copy; 2026 Leo-Curling (Cukur Keliling). All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS for Maps -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Application Modules -->
+  <script src="src/js/catalogData.js"></script>
+  <script src="src/js/mapModule.js"></script>
+  <script src="src/js/adminModule.js"></script>
+  <script src="src/js/app.js"></script>
+
+</body>
+</html>
