@@ -1,6 +1,6 @@
 /* ==========================================================================
    LEO-CURLING (CUKUR KELILING) - CATALOG DATA SUNDA BUHUN
-   Featured: Bang Leo (Founder, Owner Utama & Brand Ambassador)
+   Featured: Bang Leo (Founder & Owner Utama) & Vintage Gentleman Role Models
    ========================================================================== */
 
 const MALE_STYLES = [
@@ -10,8 +10,8 @@ const MALE_STYLES = [
     gender: 'pria',
     price: 25000,
     duration: '35 Min',
-    image: 'src/images/bangleo_owner.jpg', // Bang Leo as Role Model & Brand Ambassador!
-    description: 'Model gaya rambut khas Bang Leo (Owner & Brand Ambassador). Gradasi halus bagian samping & leher dengan puncak mahkota rambut rapi & gagah ala Ksatria Pajajaran.'
+    image: 'src/images/vintage_gentleman_fade.jpg',
+    description: 'Gradasi halus bagian samping & leher dengan puncak mahkota rambut rapi & gagah ala Ksatria Pajajaran. Tampilan vintage nan sangat elegan.'
   },
   {
     id: 'm2',
@@ -19,8 +19,8 @@ const MALE_STYLES = [
     gender: 'pria',
     price: 35000,
     duration: '35 Min',
-    image: 'src/images/bangleo_owner.jpg',
-    description: 'Potongan belah samping klimis bermartabat tinggi, mencerminkan wibawa kepemimpinan raja Sunda buhun.'
+    image: 'src/images/vintage_gentleman_sidepart.jpg',
+    description: 'Potongan belah samping klimis bermartabat tinggi, mencerminkan wibawa kepemimpinan raja Sunda buhun dengan karakter eksekutif klasik.'
   },
   {
     id: 'm3',
@@ -29,7 +29,7 @@ const MALE_STYLES = [
     price: 25000,
     duration: '30 Min',
     image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80',
-    description: 'Potongan poni depan rata bertekstur tangguh & pemberani. Sangat modis untuk pemuda Wanayasa kekinian.'
+    description: 'Potongan poni depan rata bertekstur tangguh & pemberani. Tampilan gentlemen modis kekinian.'
   },
   {
     id: 'm4',
@@ -38,7 +38,7 @@ const MALE_STYLES = [
     price: 30000,
     duration: '40 Min',
     image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80',
-    description: 'Rambut bagian atas bervolume tinggi disisir rapi ke belakang dengan sentuhan gaya klasik yang meledak.'
+    description: 'Rambut bagian atas bervolume tinggi disisir rapi ke belakang dengan sentuhan gaya klasik retro nan karismatik.'
   },
   {
     id: 'm5',
@@ -47,7 +47,7 @@ const MALE_STYLES = [
     price: 20000,
     duration: '30 Min',
     image: 'https://images.unsplash.com/photo-1517832606589-71574620396d?auto=format&fit=crop&w=600&q=80',
-    description: 'Sisi samping tipis bersih kontras dengan rambut atas yang disisir licin penuh percaya diri.'
+    description: 'Sisi samping tipis bersih kontras dengan rambut atas yang disisir licin klimis memikat.'
   },
   {
     id: 'm6',
@@ -124,7 +124,7 @@ const ADDITIONAL_SERVICES = [
 ];
 
 const BARBERS = [
-  { id: 'b1', name: 'Bang Leo (Owner Utama, Ambassador & Master Barber)', rating: '5.0 ⭐' },
+  { id: 'b1', name: 'Bang Leo (Owner Utama & Master Barber)', rating: '5.0 ⭐' },
   { id: 'b2', name: 'Tim Capster Keliling Wanayasa', rating: '4.9 ⭐' }
 ];
 
@@ -138,7 +138,7 @@ const MOCK_INITIAL_ORDERS = [
     lng: 107.5628,
     notes: 'Rumah cat hijau dekat masjid, samping warung.',
     hairStyle: 'Gaya Ksatria Ciung Wanara (Low Taper Fade)',
-    barber: 'Bang Leo (Owner Utama, Ambassador & Master Barber)',
+    barber: 'Bang Leo (Owner Utama & Master Barber)',
     date: '2026-08-21',
     time: '09:00',
     totalPrice: 25000,
@@ -154,7 +154,7 @@ const MOCK_INITIAL_ORDERS = [
     lng: 107.5655,
     notes: 'Dekat lapangan bola Wanayasa.',
     hairStyle: 'Gaya Nyi Pohaci (Modern Butterfly Cut)',
-    barber: 'Bang Leo (Owner Utama, Ambassador & Master Barber)',
+    barber: 'Bang Leo (Owner Utama & Master Barber)',
     date: '2026-08-21',
     time: '13:00',
     totalPrice: 40000,
