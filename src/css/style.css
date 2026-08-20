@@ -829,7 +829,413 @@ textarea.form-control {
   margin-top: 15px;
 }
 
-/* DESKTOP MEDIA QUERIES (min-width: 769px) */
+/* ============================================================
+   STATUS BADGES (FIX: added missing 'progress' & 'cancelled')
+   ============================================================ */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-family: var(--font-vintage);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.status-badge.pending {
+  background: rgba(217, 119, 6, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(217, 119, 6, 0.5);
+}
+.status-badge.enroute {
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(37, 99, 235, 0.5);
+}
+.status-badge.progress {
+  background: rgba(147, 51, 234, 0.2);
+  color: #c084fc;
+  border: 1px solid rgba(147, 51, 234, 0.5);
+}
+.status-badge.completed {
+  background: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(22, 163, 74, 0.5);
+}
+.status-badge.cancelled {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+/* ============================================================
+   ADMIN TABLE EXTRAS
+   ============================================================ */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-light);
+}
+.orders-table th {
+  background: rgba(18, 9, 6, 0.8);
+  color: var(--accent-gold);
+  font-family: var(--font-vintage);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border-gold);
+  text-align: left;
+}
+.orders-table td {
+  border-bottom: 1px solid rgba(197, 160, 89, 0.12);
+  vertical-align: top;
+}
+.orders-table tbody tr:hover {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.btn-action-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(30, 58, 138, 0.8);
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 0.78rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-family: var(--font-vintage);
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+.btn-action-maps:hover {
+  background: rgba(30, 58, 138, 1);
+  color: #fff;
+}
+
+.status-select {
+  background: rgba(18, 9, 6, 0.9);
+  color: var(--text-light);
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-family: var(--font-vintage);
+  font-size: 0.78rem;
+  cursor: pointer;
+  min-width: 130px;
+}
+
+/* Delete button (new) */
+.btn-delete-order {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 4px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-delete-order:hover {
+  background: rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+/* Admin map card */
+.admin-map-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   ADMIN FILTER BAR (new feature)
+   ============================================================ */
+.admin-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 16px;
+  background: rgba(18, 9, 6, 0.6);
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.admin-search-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 180px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 0 12px;
+  color: var(--accent-gold);
+}
+
+.admin-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 9px 0;
+  outline: none;
+}
+.admin-search-input::placeholder {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.admin-status-filter {
+  background: rgba(18, 9, 6, 0.9);
+  color: var(--text-light);
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-family: var(--font-vintage);
+  font-size: 0.82rem;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.btn-admin-clear-filter {
+  background: rgba(197, 160, 89, 0.1);
+  color: var(--accent-gold);
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 9px 14px;
+  cursor: pointer;
+  font-family: var(--font-vintage);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+.btn-admin-clear-filter:hover {
+  background: rgba(197, 160, 89, 0.25);
+}
+
+/* ============================================================
+   ADD-ON SERVICES (new feature)
+   ============================================================ */
+.addon-services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(197, 160, 89, 0.07);
+  border: 1px dashed var(--border-dashed);
+  border-radius: 6px;
+}
+
+.addon-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: var(--transition-smooth);
+  color: var(--text-main);
+  font-size: 0.88rem;
+}
+.addon-checkbox-label:hover {
+  background: rgba(74, 31, 24, 0.08);
+}
+
+.addon-checkbox {
+  display: none;
+}
+
+.addon-checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--accent-leather);
+  border-radius: 4px;
+  flex-shrink: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+.addon-checkbox:checked + .addon-checkbox-custom {
+  background: var(--accent-mahogany);
+  border-color: var(--accent-mahogany);
+}
+.addon-checkbox:checked + .addon-checkbox-custom::after {
+  content: '\2713';
+  color: var(--accent-gold);
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.addon-name {
+  flex: 1;
+  font-family: var(--font-body);
+  color: var(--text-main);
+}
+
+.addon-price {
+  font-family: var(--font-vintage);
+  font-size: 0.82rem;
+  color: var(--accent-leather);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   REAL-TIME PRICE ESTIMATE BOX (new feature)
+   ============================================================ */
+.price-estimate-box {
+  background: linear-gradient(135deg, rgba(74, 31, 24, 0.1), rgba(197, 160, 89, 0.1));
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 0.88rem;
+  color: var(--text-main);
+}
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  color: var(--text-main);
+}
+.price-row.addon-row {
+  color: var(--accent-leather);
+  font-size: 0.82rem;
+  padding-left: 12px;
+}
+.price-row.total-row {
+  border-top: 1px dashed var(--border-dashed);
+  margin-top: 6px;
+  padding-top: 8px;
+  font-family: var(--font-vintage);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent-mahogany);
+}
+
+/* ============================================================
+   TOAST NOTIFICATIONS
+   ============================================================ */
+.toast-container {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  background: #2d1e15;
+  color: var(--text-light);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  max-width: 320px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: auto;
+}
+.toast.success { border-left-color: #16a34a; }
+.toast.success i { color: #4ade80; }
+.toast.error   { border-left-color: #dc2626; }
+.toast.error   i { color: #f87171; }
+.toast.info    { border-left-color: var(--accent-gold); }
+.toast.info    i { color: var(--accent-gold); }
+
+/* ============================================================
+   RECEIPT HEADER (missing styles)
+   ============================================================ */
+.receipt-header {
+  text-align: center;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed var(--accent-leather);
+}
+.receipt-title {
+  font-family: var(--font-brand);
+  font-size: 1.6rem;
+  color: var(--accent-mahogany);
+  margin-bottom: 4px;
+}
+.receipt-order-id {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--accent-leather);
+  letter-spacing: 2px;
+}
+.receipt-stamp-wax {
+  display: inline-block;
+  background: var(--accent-mahogany);
+  color: var(--accent-gold);
+  font-family: var(--font-vintage);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  padding: 5px 14px;
+  border-radius: 30px;
+  border: 2px solid var(--accent-gold);
+  margin-bottom: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+.receipt-body {
+  margin-bottom: 8px;
+}
+.receipt-row.total {
+  border-top: 2px dashed var(--accent-leather);
+  margin-top: 10px;
+  padding-top: 10px;
+  font-family: var(--font-vintage);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent-mahogany);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-barber {
+  background: #0e0705;
+  border-top: 2px solid var(--border-gold);
+  padding: 30px 0 20px;
+  color: var(--text-muted);
+  text-align: center;
+}
+.footer-content {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================================
+   DESKTOP MEDIA QUERIES (min-width: 769px)
+   ============================================================ */
 @media (min-width: 769px) {
   .hero-title {
     font-size: 3.2rem;
@@ -872,5 +1278,11 @@ textarea.form-control {
   }
   body {
     padding-bottom: 0;
+  }
+  .toast-container {
+    bottom: 24px;
+  }
+  .admin-filter-bar {
+    flex-wrap: nowrap;
   }
 }
